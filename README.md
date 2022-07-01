@@ -46,7 +46,7 @@
 - [X] *Symmetric encryption*
 - [X] *Asymmetric encryption*
 - [X] *PHP unit tests*
-- [ ] **Documentation**
+- [X] *Documentation (won't doc the tests)* 
 - [ ] **Config handling via NcryptService**
 - [ ] **Better exceptions**
 - [ ] **Laravel integration *(service-provider / singleton / facade)***
