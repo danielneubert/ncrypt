@@ -1,6 +1,6 @@
 {
     "name": "neubert/ncrypt",
-    "description": "Secure PHP Encryption Made Simple",
+    "description": "Ncrypt encrypts your data with modern cryptography but is made easy to use, secure by design and fast.",
     "keywords": [
         "encryption",
         "symmetric",

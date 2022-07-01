@@ -1,6 +1,6 @@
 # `ncrypt` — Secure PHP Encryption Made Simple
 
-### Ncrypt encrypts your data with modern cryptography but is made easy to use, super secure and fast.
+### Ncrypt encrypts your data with modern cryptography but is made easy to use, secure by design and fast.
 
 <img src="https://img.shields.io/badge/PHP-8.0 / 8.1 / 8.2-blue">
 
