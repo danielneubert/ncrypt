@@ -2,11 +2,12 @@
 
 namespace Neubert\Ncrypt\Core\Asymmetric;
 
+use Neubert\Ncrypt\Core\CoreInstance;
 use phpseclib3\Crypt\Common\AsymmetricKey as SecLibAsymmetricKey;
 use phpseclib3\Crypt\EC\PrivateKey as SecLibPrivateKey;
 use phpseclib3\Crypt\EC\PublicKey as SecLibPublicKey;
 
-class AsymmetricKey implements \JsonSerializable
+class AsymmetricKey extends CoreInstance implements \JsonSerializable
 {
     /**
      * The loaded phpseclib3 key instance.
@@ -69,10 +70,10 @@ class AsymmetricKey implements \JsonSerializable
     public function getPEM(): string
     {
         $format = [
-            'encryptionAlgorithm' => 'id-PBES2',
-            'eEncryptionScheme' => 'aes256-CBC-PAD',
-            'PRF' => 'id-hmacWithSHA512-256',
-            'iterationCount' => 4096,
+            'encryptionAlgorithm' => $this->ncrypt()->getConfig('asymmetric.key.algorithm'),
+            'eEncryptionScheme' => $this->ncrypt()->getConfig('asymmetric.key.scheme'),
+            'PRF' => $this->ncrypt()->getConfig('asymmetric.key.prandom'),
+            'iterationCount' => $this->ncrypt()->getConfig('asymmetric.key.icount'),
         ];
 
         return $this->instance->toString('PKCS8', $format);

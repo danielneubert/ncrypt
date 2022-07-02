@@ -27,6 +27,6 @@ class EC extends AsymmetricEncryption
             $key->withPassword($password);
         }
 
-        return new PrivateKey($key);
+        return new PrivateKey($this->ncrypt(), $key);
     }
 }

@@ -33,7 +33,7 @@ class AsymmetricEncryption extends CoreInstance
      */
     public function withPrivate(mixed $key): self
     {
-        $this->privateKey = is_a($key, PrivateKey::class) ? $key : new PrivateKey($key);
+        $this->privateKey = is_a($key, PrivateKey::class) ? $key : new PrivateKey($this->ncrypt(), $key);
         return $this;
     }
 
@@ -45,7 +45,7 @@ class AsymmetricEncryption extends CoreInstance
      */
     public function withPublic(mixed $key): self
     {
-        $this->publicKey = is_a($key, PublicKey::class) ? $key : new PublicKey($key);
+        $this->publicKey = is_a($key, PublicKey::class) ? $key : new PublicKey($this->ncrypt(), $key);
         return $this;
     }
 }

@@ -44,7 +44,7 @@ class ECIES extends ECDH implements EncryptionInterface
         $cipherPublic = substr($chiffre, -64);
         $cipherText = substr($chiffre, 0, -64);
 
-        $cipherPublic = new PublicKey($cipherPublic);
+        $cipherPublic = new PublicKey($this->ncrypt(), $cipherPublic);
 
         $secretKey = $this->getSecret($this->privateKey, $cipherPublic);
 

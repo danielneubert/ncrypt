@@ -32,10 +32,10 @@ class SymmetricEncryption extends CoreInstance
     {
         return $cipher->setPassword(
             $this->password,
-            'pbkdf2',
-            'sha256',
-            'phpseclib/salt',
-            4096,
+            $this->ncrypt()->getConfig('symmetric.key.method'),
+            $this->ncrypt()->getConfig('symmetric.key.hash'),
+            $this->ncrypt()->getConfig('symmetric.key.salt'),
+            $this->ncrypt()->getConfig('symmetric.key.icount'),
             $cipher->getKeyLength() >> 3
         );
     }
